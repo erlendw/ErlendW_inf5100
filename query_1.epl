@@ -1,1 +1,1 @@
-SELECT * from StockTick
+SELECT timestamp from StockTick WHERE close BETWEEN 17 AND 20
