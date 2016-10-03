@@ -24,7 +24,7 @@ public class INF5100 {
 
 		EPAdministrator cepAdm = cep.getEPAdministrator();
 
-		for(int queryCounter = 1; queryCounter <= 1; queryCounter++) {
+		for(int queryCounter = 4; queryCounter <= 4; queryCounter++) {
 			System.out.println("------------------");
 			System.out.println("PERFORMING QUERY " + queryCounter);
 			System.out.println("------------------");

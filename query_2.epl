@@ -1,1 +1,5 @@
-SELECT * FROM StockTick
+/*
+win:length_batch data window collects a given number of events and posts collected events as a batch to listeners when the given number of events has collected.
+*/
+
+SELECT MAX(weightedPrice) AS HighestPrice, MIN(weightedPrice) AS LowestPrice FROM StockTick.win:length_batch(100)

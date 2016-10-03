@@ -1,1 +1,1 @@
-SELECT * FROM StockTick
+SELECT SUM(weightedPrice) AS TheActualSum FROM StockTick.win:length_batch(100)
