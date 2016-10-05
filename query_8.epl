@@ -1,1 +1,2 @@
-SELECT * FROM StockTick
+SELECT en.timestamp, to.timestamp, tre.timestamp FROM pattern[every en=StockTick -> to=StockTick(to.weightedPrice > en.weightedPrice  AND to.close > en.close) -> tre=StockTick(tre.weightedPrice > to.weightedPrice AND tre.close > to.close)]
+

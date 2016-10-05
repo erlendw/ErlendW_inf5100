@@ -1,1 +1,1 @@
-SELECT * FROM StockTick
+select a.timestamp, b.timestamp from pattern[every a=StockTick -> b=StockTick(b.weightedPrice >= a.weightedPrice*100 AND b.volume/a.volume>=0.4)]

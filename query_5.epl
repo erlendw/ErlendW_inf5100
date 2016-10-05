@@ -1,1 +1,1 @@
-SELECT * FROM StockTick
+SELECT MIN(weightedPrice) AS minPrice, timestamp AS theDate FROM StockTick.win:length_batch(50) HAVING weightedPrice=MIN(weightedPrice)

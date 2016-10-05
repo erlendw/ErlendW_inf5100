@@ -1,1 +1,1 @@
-SELECT * FROM StockTick
+SELECT initial.timestamp, initial.weightedPrice, buy.timestamp, sell.timestamp FROM pattern[every initial=StockTick -> buy=StockTick( buy.weightedPrice < initial.weightedPrice AND buy.volume/initial.volume >= 0.7) OR sell=StockTick(sell.weightedPrice*3 >= initial.weightedPrice AND sell.volume/initial.volume>=0.7)]

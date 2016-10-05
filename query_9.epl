@@ -1,1 +1,6 @@
-SELECT * FROM StockTick
+//SELECT en.timestamp, to.timestamp, tre.timestamp FROM pattern[every en=StockTick -> to=StockTick(to.weightedPrice < en.weightedPrice) -> tre=StockTick(tre.weightedPrice < to.weightedPrice AND tre.timestamp.between(en.timestamp, en.timestamp.plus(15 days), true, true))]
+
+select startStock.timestamp, startStock.weightedPrice, stopStock.timestamp, stopStock.weightedPrice FROM pattern[every startStock=StockTick -> stopStock=StockTick(stopStock.weightedPrice <= startStock.weightedPrice/3 AND stopStock.timestamp.between(startStock.timestamp, startStock.timestamp.plus(15 days)))]
+
+
+
